@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">QianLiLu</string>
+
+    <!-- drawer strings-->
+    <string name="userName">Unknown</string>
+    <string name="inbox">消息</string>
+    <string name="blink">Blink</string>
+    <string name="homepage">主页</string>
+    <string name="recom">猜你喜欢</string>
+    <string name="crowdfunding">众筹</string>
+    <string name="more">更多</string>
+
+    <!-- menu items-->
+    <string name="search">search</string>
+    <string name="add">add</string>
+</resources>
