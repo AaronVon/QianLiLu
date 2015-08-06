@@ -1,11 +1,14 @@
 package com.pioneer.aaron.qianlilu;
 
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import com.pioneer.aaron.qianlilu.Fragments.MainFragment;
+import com.pioneer.aaron.qianlilu.Fragments.HomeFragment;
 
 import br.liveo.Model.HelpLiveo;
 import br.liveo.Model.Navigation;
@@ -44,12 +47,30 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
                 .setOnClickFooter(onClickFooter)
                 .build();
 
+        int position = this.getCurrentPosition();
+        this.setElevationToolBar(position != 2 ? 15 : 0);
 
     }
 
     @Override
     public void onItemClick(int position) {
+        Fragment fragment;
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
+        switch (position) {
+            case 2:
+                fragment = new HomeFragment();
+                break;
+            default:
+                fragment = MainFragment.newInstance(navi_drawer.get(position).getName());
+                break;
+        }
+        if (fragment != null) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .commit();
+        }
+        setElevationToolBar(position != 2 ? 15 : 0);
     }
 
     private OnPrepareOptionsMenuLiveo onPrepare = new OnPrepareOptionsMenuLiveo() {
@@ -70,7 +91,6 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
         @Override
         public void onClick(View v) {
             Toast.makeText(MainActivity.this, "click on footer", Toast.LENGTH_SHORT).show();
-
             closeDrawer();
         }
     };

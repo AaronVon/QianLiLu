@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.pioneer.aaron.materialui_test_1.TabPagerItem;
 
 import java.util.List;
 

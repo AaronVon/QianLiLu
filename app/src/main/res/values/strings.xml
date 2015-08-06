@@ -13,4 +13,9 @@
     <!-- menu items-->
     <string name="search">search</string>
     <string name="add">add</string>
+    
+    <!-- tab pagers-->
+    <string name="TGU">TGU</string>
+    <string name="TRU">TRU</string>
+    <string name="TSU">TSU</string>
 </resources>
