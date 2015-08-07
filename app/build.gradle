@@ -23,4 +23,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'br.com.liveo:navigationdrawer-material:2.3.4'
+    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
+    compile files('/Users/Aaron/repositories/QianLiLu/libs/nineoldandroids-2.4.0.jar')
 }

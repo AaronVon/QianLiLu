@@ -5,6 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/nliveo_green_colorPrimary</item>
         <item name="colorPrimaryDark">@color/nliveo_green_colorPrimaryDark</item>
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
     <!--Here will be the theme of the class that will extends NavigationLiveo-->

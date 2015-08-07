@@ -1,12 +1,15 @@
 package com.pioneer.aaron.qianlilu;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
 
+import com.pioneer.aaron.qianlilu.Activities.LoginActivity;
 import com.pioneer.aaron.qianlilu.Fragments.MainFragment;
 import com.pioneer.aaron.qianlilu.Fragments.HomeFragment;
 
@@ -19,6 +22,7 @@ import br.liveo.navigationliveo.NavigationLiveo;
 public class MainActivity extends NavigationLiveo implements OnItemClickListener {
 
     private HelpLiveo navi_drawer;
+    long exitTime = 0;//calculate time to exit
 
     @Override
     public void onInt(Bundle bundle) {
@@ -82,7 +86,9 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
     private View.OnClickListener onClickPhoto = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(MainActivity.this, "click on thumbnail of user", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.in_from_right, R.anim.keep);
             closeDrawer();
         }
     };
@@ -94,4 +100,24 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
             closeDrawer();
         }
     };
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+            if (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0) {
+                this.exitApp();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private void exitApp() {
+        if ((System.currentTimeMillis() - exitTime) > 2000) {
+            Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            finish();
+        }
+    }
 }
