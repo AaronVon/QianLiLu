@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment {
                 .setHintTextColor(getResources().getColor(R.color.white));
         searchView.setOnQueryTextListener(onQuerySearchListener);
 
-        menu.findItem(R.id.menu_add).setVisible(true);
+        menu.findItem(R.id.menu_location).setVisible(true);
         menu.findItem(R.id.menu_search).setVisible(true);
 
         mSearchCheck = false;
@@ -99,7 +99,7 @@ public class HomeFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_add:
+            case R.id.menu_location:
                 break;
             case R.id.menu_search:
                 mSearchCheck = true;

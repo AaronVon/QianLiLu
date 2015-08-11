@@ -9,8 +9,8 @@
         android:title="@string/search"/>
 
     <item
-        android:id="@+id/menu_add"
-        android:icon="@mipmap/ic_add_white_24dp"
+        android:id="@+id/menu_location"
+        android:icon="@mipmap/ic_location_on_white_24dp"
         app:showAsAction="ifRoom"
-        android:title="@string/add"/>
+        android:title="@string/location"/>
 </menu>
