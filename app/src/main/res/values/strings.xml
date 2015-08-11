@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">QianLiLu</string>
+    <string name="app_name">千里路</string>
 
     <!-- drawer strings-->
     <string name="userName">Unknown</string>
@@ -15,7 +15,6 @@
     <string name="add">add</string>
     
     <!-- tab pagers-->
-    <string name="TGU">TGU</string>
-    <string name="TRU">TRU</string>
-    <string name="TSU">TSU</string>
+    <string name="tab_hotel">校园旅栈</string>
+    <string name="tab_pioneering">创业之旅</string>
 </resources>

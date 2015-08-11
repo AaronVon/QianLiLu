@@ -1,5 +1,6 @@
 package com.pioneer.aaron.qianlilu.Activities;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 
 import com.pioneer.aaron.qianlilu.R;
@@ -14,5 +15,6 @@ public class MoreActivity extends SwipeBackActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.more_layout);
+
     }
 }

@@ -10,8 +10,12 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.pioneer.aaron.qianlilu.Activities.LoginActivity;
-import com.pioneer.aaron.qianlilu.Fragments.MainFragment;
+import com.pioneer.aaron.qianlilu.Activities.MoreActivity;
+import com.pioneer.aaron.qianlilu.Fragments.CrowdfundFragment;
+import com.pioneer.aaron.qianlilu.Fragments.InboxFragment;
 import com.pioneer.aaron.qianlilu.Fragments.HomeFragment;
+import com.pioneer.aaron.qianlilu.Fragments.PioneerFragment;
+import com.pioneer.aaron.qianlilu.Fragments.RecommendFragment;
 
 import br.liveo.Model.HelpLiveo;
 import br.liveo.Model.Navigation;
@@ -58,16 +62,26 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
 
     @Override
     public void onItemClick(int position) {
-        Fragment fragment;
+        Fragment fragment = null;
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         switch (position) {
+            case 0:
+                fragment = InboxFragment.newInstance();
+                break;
+
             case 2:
-                fragment = new HomeFragment();
+                fragment = HomeFragment.newInstance();
                 break;
-            default:
-                fragment = MainFragment.newInstance(navi_drawer.get(position).getName());
+
+            case 3:
+                fragment = RecommendFragment.newInstance();
                 break;
+
+            case 4:
+                fragment = CrowdfundFragment.newInstance();
+                break;
+
         }
         if (fragment != null) {
             fragmentManager.beginTransaction()
@@ -96,7 +110,9 @@ public class MainActivity extends NavigationLiveo implements OnItemClickListener
     private View.OnClickListener onClickFooter = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(MainActivity.this, "click on footer", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, MoreActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.in_from_right, R.anim.keep);
             closeDrawer();
         }
     };

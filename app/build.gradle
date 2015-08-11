@@ -25,4 +25,8 @@ dependencies {
     compile 'br.com.liveo:navigationdrawer-material:2.3.4'
     compile 'me.imid.swipebacklayout.lib:library:1.0.0'
     compile files('/Users/Aaron/repositories/QianLiLu/libs/nineoldandroids-2.4.0.jar')
+    compile project(':pulltorefresh')
+    compile files('/Users/Aaron/repositories/QianLiLu/libs/locSDK_6.03.jar')
+    compile files('libs/locSDK_6.03.jar')
+    compile files('src/main/jniLibs/locSDK_6.03.jar')
 }
